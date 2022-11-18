@@ -5,22 +5,14 @@ import java.util.Scanner;
 
 public class mainApp {
 	
-	public static  Scanner input =new Scanner(System.in);
-	
-	
+	public static  Scanner input =new Scanner(System.in);	
 	public  static int choiceOfCategory ,choiceOfCategoryImageSound, choiceOfCategoryHomeApp, numberOfOrderFromUser, choiceModel, choiceOfBuy;
 	
-	   
-	   
-	   
-	 //List of Orders and Sales	    
-		  static ArrayList<UserOrder> ord=new ArrayList();
-	      static ArrayList<UserSale> sl=new ArrayList();
+	  //List of Orders and Sales	    
+	  static ArrayList<UserOrder> ord=new ArrayList();
+	  static ArrayList<UserSale> sl=new ArrayList();
 
-	   public static void main(String[] args) {
-		
-
-		
+	  public static void main(String[] args) {
 				
 		Scanner in =new Scanner(System.in);
 		
@@ -43,19 +35,16 @@ public class mainApp {
 		//Fridge
 		Appliances hoappFridge = new HomeApp(9,"GE-325",2018,"General-Electric",600,9,"Closet","A+","300lt","200lt");
 		Appliances hoappFridge2 = new HomeApp(10,"CBN-320",2019,"Crowm",350,6,"2-Doors","A++","200lt","100lt");
-		
-		
+	
 		
 		//WashingMachine
 		Appliances hoappWashingMachine = new HomeApp(11,"WS-604",2020,"Pitsos",250,4,"B","5lt",1200);
 		Appliances hoappWashingMachine2 = new HomeApp(12,"KT-450",2019,"Bosch",450,16,"A++","8lt",1600);
-		
-		
+			
 		 
 		//List for orders
 		 ArrayList<Appliances> devicesOrdered=new ArrayList();
-		
-		 
+			 
 		 devicesOrdered.add(imgTV);
 		 devicesOrdered.add(imgTV2);
 		 devicesOrdered.add(imgDVD);
@@ -68,24 +57,15 @@ public class mainApp {
 		 devicesOrdered.add(hoappFridge2);
 		 devicesOrdered.add(hoappWashingMachine);
 		 devicesOrdered.add(hoappWashingMachine2);
-		 
-		
-			    
+		 			    
 		 UserSale usale;
 		 UserOrder uorder;
-		 
-		
-	     
-    
-	    
+		 	    
 		 //User input
-	    PrintChoices();
-	    
-	    int choice=input.nextInt();
-	    
-	    choice =CheckTheInput(choice);
-	    
-	    
+	   	 PrintChoices();	    
+	  	 int choice=input.nextInt();	    
+	   	 choice =CheckTheInput(choice);
+	        
 	    //interface with the user
 	    while(true){
 	    	
@@ -107,76 +87,47 @@ public class mainApp {
 	    			 
 	    			 choiceOfCategoryImageSound=input.nextInt();
 	    			 choiceOfCategoryImageSound=CheckTheInputOfChoise1( choiceOfCategoryImageSound);
-		    		 
-		    		 
+		    		 		    		 
 		    		 if(choiceOfCategoryImageSound==1) {
 		    			 MenuChoisesFromUser(imgTV,imgTV2);
 		    		 }
-		    		 else if(choiceOfCategoryImageSound==2) {
-		    			 
-		    			 MenuChoisesFromUser(imgDVD,imgDVD2);
-		    			 
+		    		 else if(choiceOfCategoryImageSound==2) {		 	 
+		    			 MenuChoisesFromUser(imgDVD,imgDVD2);		    			 
 		    		 }
 		    		 else {
-		    			 MenuChoisesFromUser(imgPhoto,imgPhoto2);
-		    			 
-		    		 }	 
-	    			 
+		    			 MenuChoisesFromUser(imgPhoto,imgPhoto2);		    			 
+		    		 }	 	    			 
 	    		 }
 	    		 else if(choiceOfCategory==2) {
-	    			 MenuChoisesFromUser(game,game2);
-	    			 		 
+	    			 MenuChoisesFromUser(game,game2);    			 		 
 	    		 }
-	    		 else {
-	    			 
+	    		 else {	    			 
 	    			 System.out.println("Choose the Category you want:");
-	    			 System.out.println("-1.Fridge -2.WashingMachine");
-	    			 
+	    			 System.out.println("-1.Fridge -2.WashingMachine");	    			 
 	    			 choiceOfCategoryHomeApp=input.nextInt();
-		    		
-		    		 
+				 
 		    		 if(choiceOfCategoryHomeApp==1) {
-		    			 MenuChoisesFromUser(hoappFridge,hoappFridge2);
-		    			 
+		    			 MenuChoisesFromUser(hoappFridge,hoappFridge2);		    			 
 		    		 }
 		    		 else {
-		    			 MenuChoisesFromUser(hoappWashingMachine,hoappWashingMachine2);
-		    			 
-		    		 }
-	    			 
-	    		 }		
-	    		
+		    			 MenuChoisesFromUser(hoappWashingMachine,hoappWashingMachine2);		    			 
+		    		 }	    			 
+	    		 }			    		
 	    	}
-	    	else if(choice==2){
-	    		
-	    	System.out.println(ord.toString());
-	    		
+	    	else if(choice==2){	    		
+	    		System.out.println(ord.toString());	    		
 	    	}
 	    	else if(choice==3){
-	    		System.out.println(sl.toString());
-	    		
-	    		
+	    		System.out.println(sl.toString());	 	    		
 	    	}
 	    	
-	    	System.out.println("You can choose again:");
-	    	 
-	    	PrintChoices();
-	    	
-	    	
-	    	
-	    
+	    	System.out.println("You can choose again:");	    	 
+	    	PrintChoices();	    	
 	    	choice=input.nextInt();
-	    	choice = CheckTheInput(choice);
-	    	
-	    	
-	    	
-	    }//End while
-	    
-	    
-		
+	    	choice = CheckTheInput(choice);	    	
+	    }//End while		
 	}
-	
-	
+		
 	public static void MenuChoisesFromUser(Appliances object1,Appliances object2) {
 		
 		 System.out.println("Choose the model:");
@@ -207,22 +158,16 @@ public class mainApp {
 			 Checkout(object, numberOfOrderFromUser,1); 
 			 
 		 }
-		 else {
-			
-			
-			 System.out.println("Not enough products availble,Would you like to order them: \n" + "1.Yes" + "\n" +  "2.No"  );
-			 
-			 
+		 else {		
+			 System.out.println("Not enough products availble,Would you like to order them: \n" + "1.Yes" + "\n" +  "2.No"  );						 
 			 choiceOfBuy=input.nextInt();
 			 
-			 if( choiceOfBuy==1) {
-				
+			 if( choiceOfBuy==1) {				
 				 Checkout(object,numberOfOrderFromUser,2); 
 			 }
 			 else {
 				 System.out.println("Thank you for your Time");
-			 }
-			 
+			 }			 
 		 }
 	}
 	
@@ -230,8 +175,7 @@ public class mainApp {
 	public static void Checkout(Appliances object ,int  numberOfOrderFromUser,int availability) {
 		
 		 Scanner in =new Scanner(System.in);
-		
-		
+				
 		String FullnameOfUser;
 		System.out.println("Give me your Full Name:");
 		FullnameOfUser=in.nextLine();
@@ -243,41 +187,29 @@ public class mainApp {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime DeliveryDate= LocalDateTime.now().plusDays(10);
-		  
-		   
-		int cost = (int) (object.getPrice() - (object.getPrice()*object.getDiscount()));
-		   
-		System.out.println("The price of your model is: " + object.getPrice() + " and with the discount of this product the price has become : "  + cost );
-		   
-		int finalCost=cost*numberOfOrderFromUser;
-		   
+		  		   
+		int cost = (int) (object.getPrice() - (object.getPrice()*object.getDiscount()));		   
+		System.out.println("The price of your model is: " + object.getPrice() + " and with the discount of this product the price has become : "  + cost );		   
+		int finalCost=cost*numberOfOrderFromUser;		   
 		System.out.println(("The final cost of your order is " +  finalCost + "\n" ));
 		   
-		   if(availability==2) {
-		   
-			   UserOrder uorder = new UserOrder(object.getModel(),FullnameOfUser,phonenumber,now,DeliveryDate,finalCost,"Pending");
-		   
+		   if(availability==2) {		   
+			   UserOrder uorder = new UserOrder(object.getModel(),FullnameOfUser,phonenumber,now,DeliveryDate,finalCost,"Pending");		   
 			   ord.add(uorder);      
 		   }
 		   else {
 			   UserSale us = new UserSale(object.getModel(),FullnameOfUser,phonenumber,now,finalCost);
 			   sl.add(us);
-		   }
-		
+		   }		
 	}
-	
-	
-	
-	
+		
 	public static int    CheckTheInput(int choice) {
 		
 		 while(choice<0 || choice>3) {
 		    	System.out.println("Please give the number between 0 to 3");
-		    	choice=input.nextInt();
-		    	
+		    	choice=input.nextInt();	    	
 		    }
-		 return choice;
-		
+		 return choice;		
 	}
 	
 	public static int   CheckTheInputOfChoise1(int choice) {
@@ -286,17 +218,13 @@ public class mainApp {
 		    	System.out.println("Please give the number between 1 to 3");
 		    	choice=input.nextInt();
 		    }
-		 return choice;
-		
-	}
-	
-	
-	
+		 return choice;		
+	}	
 	
 	public static void PrintChoices() {
 		
-		System.out.println("----------------------------------------");
-		System.out.println("Give the number of choice you want: \n");
+	    System.out.println("----------------------------------------");
+	    System.out.println("Give the number of choice you want: \n");
 	    System.out.println("#1 - Overview of all available devices ");
 	    System.out.println("#2 - Review of all orders");
 	    System.out.println("#3 - Review of all Sales");
@@ -304,8 +232,5 @@ public class mainApp {
 	    System.out.println("---------------------------------------- \n");
 	    System.out.println("Choise:");
 		
-	}
-	
-	
-
+	}	
 }
